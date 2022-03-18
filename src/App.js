@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
+import { Route, Routes } from 'react-router-dom'
+import ShipList from './pages/ShipList/ShipList';
+import StarshipDetails from './pages/StarshipDetails/StarshipDetails';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <h1>This is our app!</h1> 
+    {/* <ShipList />  */}
+    <Routes>
+      <Route path='/' element={<ShipList />} />
+      <Route path='/starship' element={<StarshipDetails />} />
+    </Routes>
+    
+    </>
   );
 }
 
